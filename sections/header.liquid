@@ -1,16 +1,29 @@
 <div class="width">
-  <a href="/" class="header-logo">
-    <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}">
-  </a>
-  <ul class="header-nav">
-    {% for link in section.settings.navigation.links %}
-      <li>
-        <a href="{{ link.url }}">
-          {{ link.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+
+  <div class="header-flex">
+
+    <a href="/" class="header-logo">
+      <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}">
+    </a>
+
+    <button class="header-hamburger">
+      <span class="header-hamburger-bar"></span>
+      <span class="header-hamburger-bar"></span>
+    </button>
+
+
+    <ul class="header-nav">
+      {% for link in section.settings.navigation.links %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
 </div>
 
 <style>

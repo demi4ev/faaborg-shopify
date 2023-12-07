@@ -21,9 +21,23 @@ body {
   font-family: "swiss_721_n4", system-ui, -apple-system;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   width: 100%;
+}
+
+button,
+input,
+select,textarea {
+  outline: none;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }
 
 a {
@@ -54,6 +68,39 @@ li {
   background: $bg;
 }
 
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header-logo {
   display: block;
+}
+
+.header-hamburger {
+  width: 24px;
+  display: block;
+}
+
+.header-hamburger-bar {
+  height: 2px;
+  width: 100%;
+  background: $text;
+  display: block;
+
+  & + & {
+    margin-top: 8px;
+  }
+}
+
+.header-nav {
+  position: fixed;
+  top: 0;
+  left; 0;
+  height: 100%;
+  overflow: auto;
+  background: $bg;
+  width: 90%;
+  max-width: 280px;
 }

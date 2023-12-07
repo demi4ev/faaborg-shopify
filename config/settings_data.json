@@ -1,0 +1,16 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/shein-logo_cf070b91-14cc-4e16-a5cc-8283bb18b90b.svg",
+          "logo_width": 110
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

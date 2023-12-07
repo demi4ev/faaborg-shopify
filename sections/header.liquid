@@ -2,7 +2,15 @@
   <a href="/" class="header-logo">
     <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}">
   </a>
-  <h1>Header12</h1>
+  <ul class="header-nav">
+    {% for link in section.settings.navigation.links %}
+      <li>
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <style>

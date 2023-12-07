@@ -1,0 +1,14 @@
+$fadeOff: left Os 0.4s, opacity 0.4s;
+$fadeOn: left 0s, opacity 0.4s;
+$width: {{ settings.page_width }}px;
+$bp: 960px;
+
+.width {
+  max-width: $width;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+
+  @media (min-width: $bp) {
+    width: calc(100% - 80px);
+  }
+}

@@ -40,6 +40,15 @@ select,textarea {
   appearance: none;
 }
 
+p {
+  color: $text;
+  font-family: Switzer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
 a {
   text-decoration: none;
 }
@@ -94,13 +103,34 @@ li {
   }
 }
 
+.header-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 9;
+}
+
 .header-nav {
   position: fixed;
   top: 0;
-  left; 0;
+  left: 0;
   height: 100%;
   overflow: auto;
   background: $bg;
   width: 90%;
   max-width: 280px;
+  z-index: 10;
+}
+
+.header-nav-item {
+  border-bottom: 1px solid black;
+}
+
+.header-nav-anchor {
+  display: block;
+  padding: 20px;
+  color: $text;
 }

@@ -4,6 +4,7 @@ $width: {{ settings.page_width }} px;
 $bg: {{ settings.background_color }};
 $border: {{ settings.border_color }};
 $text: {{ settings.text_color }};
+$mediumText: {{ settings.medium_text_color }};
 $bp: 960px;
 
 
@@ -71,6 +72,12 @@ li {
   }
 }
 
+.hero {
+  background: black;
+  color: white;
+  padding: 200px 0;
+}
+
 
 /* Header */
 
@@ -91,6 +98,10 @@ li {
 .header-hamburger {
   width: 24px;
   display: block;
+
+  @media (min-width: $bp) {
+    display: none;
+  }
 }
 
 .header-hamburger-bar {
@@ -115,10 +126,18 @@ li {
   left: -100%;
   transition: $fadeOff;
 
+  @media (min-width: $bp) {
+    display: none;
+  }
+
   .nav-active & {
     left: 0;
     opacity: 1;
     transition: $fadeOn;
+
+    @media (min-width: $bp) {
+      display: none;
+    }
   }
 }
 
@@ -135,17 +154,67 @@ li {
   transform: translateX(-100%);
   transition: 0.4s transform;
 
+  @media (min-width: $bp) {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    width: auto;
+    max-width: none;
+    height: auto;
+    overflow: initial;
+    background: transparent;
+    transform: none;
+  }
+
   .nav-active & {
     transform: none;
   }
 }
 
 .header-nav-item {
+  padding: 20px;
   border-bottom: 1px solid $border;
+
+  @media (min-width: $bp) {
+    padding: 0;
+    border: none;
+    position: relative;
+  }
 }
 
 .header-nav-anchor {
   display: block;
-  padding: 20px;
   color: $text;
+  font-size: 20px;
+}
+
+.header-sub {
+  padding: 0 20px;
+  margin-top: 14px;
+
+  @media (min-width: $bp) {
+    position: absolute;
+    top: 0;
+    left 50%;
+    transform: translateX(-50%);
+    background: $bg;
+    border-radius: 20px;
+    border: 1px solid black;
+  }
+}
+
+.header-sub-item {
+  & + & {
+    margin-top: 5px;
+  }
+}
+
+.header-sub-anchor {
+  color: $mediumText;
+  transition: 0.2s color;
+
+  &:hover {
+    color: $text;
+  }
 }

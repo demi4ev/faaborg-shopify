@@ -2,6 +2,7 @@ $fadeOff: left Os 0.4s, opacity 0.4s;
 $fadeOn: left 0s, opacity 0.4s;
 $width: {{ settings.page_width }} px;
 $bg: {{ settings.background_color }};
+$border: {{ settings.border_color }};
 $text: {{ settings.text_color }};
 $bp: 960px;
 
@@ -106,11 +107,19 @@ li {
 .header-nav-overlay {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,.6);
   z-index: 9;
+  opacity: 0;
+  left: -100%;
+  transition: $fadeOff;
+
+  .nav-active & {
+    left: 0;
+    opacity: 1;
+    transition: $fadeOn;
+  }
 }
 
 .header-nav {
@@ -123,10 +132,16 @@ li {
   width: 90%;
   max-width: 280px;
   z-index: 10;
+  transform: translateX(-100%);
+  transition: 0.4s transform;
+
+  .nav-active & {
+    transform: none;
+  }
 }
 
 .header-nav-item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $border;
 }
 
 .header-nav-anchor {

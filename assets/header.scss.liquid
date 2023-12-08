@@ -1,94 +1,14 @@
-$fadeOff: left Os 0.4s, opacity 0.4s;
-$fadeOn: left 0s, opacity 0.4s;
-$width: {{ settings.page_width }} px;
-$bg: {{ settings.background_color }};
-$border: {{ settings.border_color }};
-$text: {{ settings.text_color }};
-$mediumText: {{ settings.medium_text_color }};
-$bp: 960px;
-
-
-/* Reset */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: $bg;
-  color: $text;
-  font-size: 100%;
-  font-family: "swiss_721_n4", system-ui, -apple-system;
-}
-
-img,
-svg {
-  display: block;
-  width: 100%;
-}
-
-button,
-input,
-select,textarea {
-  outline: none;
-  border: none;
-  background: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-}
-
-p {
-  color: $text;
-  font-family: Switzer;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px; /* 162.5% */
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style: none;
-}
-
-
-/* Page */
-
-.width {
-  max-width: $width;
-  width: calc(100% - 40px);
-  margin: 0 auto;
-
-  @media (min-width: $bp) {
-    width: calc(100% - 80px);
-  }
-}
-
-.hero {
-  background: black;
-  color: white;
-  padding: 200px 0;
-}
-
-
-/* Header */
-
 .header {
   background: $bg;
+}
+
+.header-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header__logo {
+.header-logo {
   display: block;
 }
 

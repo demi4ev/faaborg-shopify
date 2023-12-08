@@ -1,11 +1,22 @@
-$fadeOff: left Os 0.4s, opacity 0.4s;
+:root {
+  --fadeOff: left Os 0.4s, opacity 0.4s;
+  --fadeOn: left 0s, opacity 0.4s;
+  --width: {{ settings.page_width }}px;
+  --bg: {{ settings.background_color }};
+  --border: {{ settings.border_color }};
+  --text: {{ settings.text_color }};
+  --mediumText: {{ settings.medium_text_color }};
+  --bp: 960px;
+}
+
+/* $fadeOff: left Os 0.4s, opacity 0.4s;
 $fadeOn: left 0s, opacity 0.4s;
 $width: {{ settings.page_width }} px;
 $bg: {{ settings.background_color }};
 $border: {{ settings.border_color }};
 $text: {{ settings.text_color }};
 $mediumText: {{ settings.medium_text_color }};
-$bp: 960px;
+$bp: 960px; */
 
 
 /* Reset */
@@ -17,8 +28,8 @@ $bp: 960px;
 }
 
 body {
-  background: $bg;
-  color: $text;
+  background: var(--bg);
+  color: var(--text);
   font-size: 100%;
   font-family: "swiss_721_n4", system-ui, -apple-system;
 }
@@ -43,7 +54,7 @@ select,textarea {
 }
 
 p {
-  color: $text;
+  color: var(--text);
   font-family: Switzer;
   font-size: 16px;
   font-style: normal;
@@ -63,11 +74,11 @@ li {
 /* Page */
 
 .width {
-  max-width: $width;
+  max-width: var(--width);
   width: calc(100% - 40px);
   margin: 0 auto;
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     width: calc(100% - 80px);
   }
 }
@@ -82,7 +93,7 @@ li {
 /* Header */
 
 .header {
-  background: $bg;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,7 +107,7 @@ li {
   width: 24px;
   display: block;
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     display: none;
   }
 }
@@ -104,7 +115,7 @@ li {
 .header__hamburger-bar {
   height: 2px;
   width: 100%;
-  background: $text;
+  background: var(--text);
   display: block;
 
   & + & {
@@ -121,18 +132,18 @@ li {
   z-index: 9;
   opacity: 0;
   left: -100%;
-  transition: $fadeOff;
+  transition: var(--fadeOff);
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     display: none;
   }
 
   .nav_active & {
     left: 0;
     opacity: 1;
-    transition: $fadeOn;
+    transition: var(--fadeOn);
 
-    @media (min-width: $bp) {
+    @media (min-width: var(--bp)) {
       display: none;
     }
   }
@@ -144,14 +155,14 @@ li {
   left: 0;
   height: 100%;
   overflow: auto;
-  background: $bg;
+  background: var(--bg);
   width: 90%;
   max-width: 280px;
   z-index: 10;
   transform: translateX(-100%);
   transition: 0.4s transform;
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     position: static;
     display: inline-flex;
     align-items: center;
@@ -171,9 +182,9 @@ li {
 
 .header__nav-item {
   padding: 20px;
-  border-bottom: 1px solid $border;
+  border-bottom: 1px solid var(--border);
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     padding: 0;
     border: none;
     position: relative;
@@ -182,10 +193,10 @@ li {
 
 .header__nav-anchor {
   display: block;
-  color: $text;
+  color: (--text);
   font-size: 20px;
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     display: inline-block;
     padding: 20px 0;
     margin: -20px 0;
@@ -196,18 +207,18 @@ li {
   padding: 0 20px;
   margin-top: 14px;
 
-  @media (min-width: $bp) {
+  @media (min-width: var(--bp)) {
     position: absolute;
     top: 100%;
     transform: translateX(-50%);
-    background: $bg;
+    background: var(--bg);
     border-radius: 20px;
     width: 200px;
     border: 1px solid black;
     padding: 20px;
     opacity: 0;
     left: -9999px;
-    transition: $fadeOff;
+    transition: var(--fadeOff);
 
     &:after {
       display: block;
@@ -215,7 +226,7 @@ li {
       position: absolute;
       width: 12px;
       height: 12px;
-      background: $bg;
+      background: var(--bg);
       background: blue;
       left: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
@@ -224,10 +235,10 @@ li {
 
     .header__nav-anchor:hover + &,
     &:hover {
-      @media (min-width: $bp) {
+      @media (min-width: var(--bp)) {
         left: 50%;
         opacity: 1;
-        transition: $fadeOn;
+        transition: var(--fadeOn);
       }
     }
   }
@@ -240,10 +251,10 @@ li {
 }
 
 .header__sub-anchor {
-  color: $mediumText;
+  color: var(--mediumText);
   transition: 0.2s color;
 
   &:hover {
-    color: $text;
+    color: var(--text);
   }
 }

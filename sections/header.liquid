@@ -1,3 +1,6 @@
+{% comment %} <link rel="stylesheet" href="{{ 'header.scss.liquid' | asset_url }}"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{{ 'header.css' | asset_url }}"> {% endcomment %}
+
 <div class="width">
 
   <div class="header">
@@ -6,24 +9,24 @@
       <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}">
     </a>
 
-    <button class="header-hamburger">
-      <span class="header-hamburger-bar"></span>
-      <span class="header-hamburger-bar"></span>
+    <button class="header__hamburger">
+      <span class="header__hamburger-bar"></span>
+      <span class="header__hamburger-bar"></span>
     </button>
 
 
-    <ul class="header-nav">
+    <ul class="header__nav">
       {% for link in section.settings.navigation.links %}
-        <li class="header-nav-item">
-          <a  class="header-nav-anchor" href="{{ link.url }}">
+        <li class="header__nav-item">
+          <a  class="header__nav-anchor" href="{{ link.url }}">
             {{ link.title }}
           </a>
 
           {% if link.links != blank %}
-            <ul class="header-sub">
+            <ul class="header__sub">
             {% for child in link.links %}
-              <li class="header-sub-item">
-                <a href="{{ child.url }}" class="header-sub-anchor">
+              <li class="header__sub-item">
+                <a href="{{ child.url }}" class="header__sub-anchor">
                   {{ child.title }}
                 </a>
               </li>
@@ -38,7 +41,7 @@
 
 </div>
 
-<div class="header-nav-overlay"></div>
+<div class="header__nav-overlay"></div>
 
 <style>
   .header {
@@ -50,12 +53,12 @@
 </style>
 
 <script>
-  document.querySelector('.header-hamburger').addEventListener('click', () => {
-    document.querySelector('.header').classList.toggle('nav-active');
+  document.querySelector('.header__hamburger').addEventListener('click', () => {
+    document.querySelector('.header').classList.toggle('nav_active');
   });
 
-  document.querySelector('.header-nav-overlay').addEventListener('click', () => {
-    document.querySelector('.header').classList.remove('nav-active');
+  document.querySelector('.header__nav-overlay').addEventListener('click', () => {
+    document.querySelector('.header').classList.remove('nav_active');
   });
 </script>
 

@@ -1,3 +1,11 @@
+/* .header {
+  padding: {{ section.settings.padding }}px 0;
+}
+
+.header__logo {
+  max-width: {{ section.settings.logo_width }}px;
+} */
+
 .header {
   background: var(--bg);
   display: flex;
@@ -13,7 +21,7 @@
   width: 24px;
   display: block;
 
-  @media (min-width: var(--bp)) {
+  @media (min-width: 768px) {
     display: none;
   }
 }
@@ -40,7 +48,7 @@
   left: -100%;
   transition: var(--fadeOff);
 
-  @media (min-width: var(--bp)) {
+  @media (min-width: 768px) {
     display: none;
   }
 
@@ -49,7 +57,7 @@
     opacity: 1;
     transition: var(--fadeOn);
 
-    @media (min-width: var(--bp)) {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -68,11 +76,11 @@
   transform: translateX(-100%);
   transition: 0.4s transform;
 
-  @media (min-width: var(--bp)) {
+  @media (min-width: 768px) {
     position: static;
     display: inline-flex;
     align-items: center;
-    gap: 40px;
+    gap: 32px;
     width: auto;
     max-width: none;
     height: auto;
@@ -90,7 +98,7 @@
   padding: 20px;
   border-bottom: 1px solid var(--border);
 
-  @media (min-width: var(--bp)) {
+  @media (min-width: 768px) {
     padding: 0;
     border: none;
     position: relative;
@@ -99,10 +107,11 @@
 
 .header__nav-anchor {
   display: block;
-  color: (--text);
-  font-size: 20px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 26px;
 
-  @media (min-width: var(--bp)) {
+  @media (min-width: 768px) {
     display: inline-block;
     padding: 20px 0;
     margin: -20px 0;
@@ -113,7 +122,7 @@
   padding: 0 20px;
   margin-top: 14px;
 
-  @media (min-width: var(--bp)) {
+  @media (min-width: 768px) {
     position: absolute;
     top: 100%;
     transform: translateX(-50%);
@@ -141,7 +150,7 @@
 
     .header__nav-anchor:hover + &,
     &:hover {
-      @media (min-width: var(--bp)) {
+      @media (min-width: 768px) {
         left: 50%;
         opacity: 1;
         transition: var(--fadeOn);

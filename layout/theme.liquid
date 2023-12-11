@@ -1,3 +1,16 @@
+{% style %}
+  :root {
+    --fadeOff: left Os 0.4s, opacity 0.4s;
+    --fadeOn: left 0s, opacity 0.4s;
+    --width: {{ settings.page_width }}px;
+    --bg: {{ settings.background_color }};
+    --border: {{ settings.border_color }};
+    --text: {{ settings.text_color }};
+    --mediumText: {{ settings.medium_text_color }};
+    --bp: 960px;
+  }
+{% endstyle %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faaborg</title>
-    <link rel="stylesheet" href="{{ 'style.scss.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
     {{ content_for_header }}
   </head>
   <body>

@@ -1,17 +1,15 @@
-{% comment %} <link rel="stylesheet" href="{{ 'header.scss.liquid' | asset_url }}"> {% endcomment %}
-{% comment %} <link rel="stylesheet" href="{{ 'header.css' | asset_url }}"> {% endcomment %}
+{{ 'header.css' | asset_url | stylesheet_tag }}
 
 <div class="width">
 
   <div class="header">
 
     <a href="/" class="header__logo">
-      <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}">
+      <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}" loading="eager">
     </a>
 
     <button class="header__hamburger">
-      <span class="header__hamburger-bar"></span>
-      <span class="header__hamburger-bar"></span>
+      {% include 'icon' with 'icon-menu.svg' %}
     </button>
 
 

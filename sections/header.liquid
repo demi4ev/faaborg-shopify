@@ -4,12 +4,15 @@
 
   <div class="header">
 
+    {% render 'icon' with 'icon-menu.svg' %}
+
     <a href="/" class="header__logo">
       <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}" loading="eager">
     </a>
 
     <button class="header__hamburger">
-      {% include 'icon' with 'icon-menu.svg' %}
+      <span class="header__hamburger-bar"></span>
+      <span class="header__hamburger-bar"></span>
     </button>
 
 

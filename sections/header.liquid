@@ -1,44 +1,42 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-<div class="width">
 
-  <div class="header">
+<div class="header">
 
-    {% render 'icon' with 'icon-menu.svg' %}
+  {% if section.settings.show_catalog_button %}
+    <button class="header__button">{% render 'icon' with 'icon-menu.svg' %}Каталог</button>
+  {% endif %}
 
-    <a href="/" class="header__logo">
-      <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}" loading="eager">
-    </a>
+  <a href="/" class="header__logo">
+    <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}" loading="eager">
+  </a>
 
-    <button class="header__hamburger">
-      <span class="header__hamburger-bar"></span>
-      <span class="header__hamburger-bar"></span>
-    </button>
+  <button class="header__hamburger">
+    <span class="header__hamburger-bar"></span>
+    <span class="header__hamburger-bar"></span>
+  </button>
 
+  <ul class="header__nav">
+    {% for link in section.settings.navigation.links %}
+      <li class="header__nav-item">
+        <a  class="header__nav-anchor" href="{{ link.url }}">
+          {{ link.title }}
+        </a>
 
-    <ul class="header__nav">
-      {% for link in section.settings.navigation.links %}
-        <li class="header__nav-item">
-          <a  class="header__nav-anchor" href="{{ link.url }}">
-            {{ link.title }}
-          </a>
-
-          {% if link.links != blank %}
-            <ul class="header__sub">
-            {% for child in link.links %}
-              <li class="header__sub-item">
-                <a href="{{ child.url }}" class="header__sub-anchor">
-                  {{ child.title }}
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-
-  </div>
+        {% if link.links != blank %}
+          <ul class="header__sub">
+          {% for child in link.links %}
+            <li class="header__sub-item">
+              <a href="{{ child.url }}" class="header__sub-anchor">
+                {{ child.title }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 
 </div>
 

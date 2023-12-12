@@ -1,9 +1,19 @@
 .header {
   background: var(--bg);
+}
+
+.header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  padding: 16px 56px 32px;
+}
+
+.header__menu {
+  display: flex;
+  gap: 64px;
+  width: 100%;
 }
 
 .header__logo {
@@ -14,7 +24,7 @@
   display: flex;
   padding: 15px 20px;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   border-radius: 40px;
   background: var(--bgLight);
   color: var(--text);
@@ -22,6 +32,10 @@
   font-style: normal;
   font-weight: 600;
   line-height: 26px; /* 162.5% */
+}
+
+.header__button_second-color {
+  background: var(--second-color);
 }
 
 .header__icons {
@@ -94,6 +108,7 @@
     display: inline-flex;
     align-items: center;
     gap: 32px;
+    padding: 0 24px 0 0;
     width: auto;
     max-width: none;
     height: auto;

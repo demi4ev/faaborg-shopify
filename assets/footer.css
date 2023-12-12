@@ -1,0 +1,33 @@
+.footer {
+
+}
+
+.footer__container {
+  display: flex;
+  gap: 112px;
+}
+
+.footer__about {
+
+}
+
+.footer__h3 {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+  margin: 0 0 12px;
+}
+
+.footer__text {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 26px; /* 185.714% */
+}
+
+.footer__link {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 26px; /* 185.714% */
+  text-decoration-line: underline;
+}

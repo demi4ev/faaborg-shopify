@@ -1,55 +1,68 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
 
-<div class="header">
+<div class="header__container">
 
-  <a href="/" class="header__logo">
+  {% comment %} <a href="/" class="header__logo">
     <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}" loading="eager">
-  </a>
+  </a> {% endcomment %}
 
-  {% if section.settings.show_catalog_button %}
-    <button class="header__button">{% render 'icon' with 'icon-menu.svg' %}Catalog</button>
-  {% endif %}
+  <img src="{{ 'logo_default.svg' | asset_url }}" alt="{{ site.name }}" loading="eager" class="header__logo">
 
-  <button class="header__hamburger">
-    <span class="header__hamburger-bar"></span>
-    <span class="header__hamburger-bar"></span>
-  </button>
+  <nav class="header__menu">
 
-  <ul class="header__nav">
-    {% for link in section.settings.navigation.links %}
-      <li class="header__nav-item">
-        <a  class="header__nav-anchor" href="{{ link.url }}">
-          {{ link.title }}
-        </a>
+    {% if section.settings.show_catalog_button %}
+      <button class="header__button">{% render 'icon' with 'icon-menu.svg' %}Catalog</button>
+    {% endif %}
 
-        {% if link.links != blank %}
-          <ul class="header__sub">
-          {% for child in link.links %}
-            <li class="header__sub-item">
-              <a href="{{ child.url }}" class="header__sub-anchor">
-                {{ child.title }}
-              </a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+    <button class="header__hamburger">
+      <span class="header__hamburger-bar"></span>
+      <span class="header__hamburger-bar"></span>
+    </button>
+
+    <ul class="header__nav">
+      {% for link in section.settings.navigation.links %}
+        <li class="header__nav-item">
+          <a class="header__nav-anchor" href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+
+          {% if link.links != blank %}
+            <ul class="header__sub">
+            {% for child in link.links %}
+              <li class="header__sub-item">
+                <a href="{{ child.url }}" class="header__sub-anchor">
+                  {{ child.title }}
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="header__icons">
+    {% render 'icon' with 'icon-search.svg' %}
+    {% render 'icon' with 'icon-lang.svg' %}
+    {% render 'icon' with 'icon-profile.svg' %}
+    {% render 'icon' with 'icon-selected.svg' %}
+    <button class="header__button header__button_second-color">{% render 'icon' with 'icon-cart.svg' %}Cart</button>
+  </div>
 
 </div>
 
 <div class="header__nav-overlay"></div>
 
-{% comment %} <style>
-  .header {
+<style>
+  {% comment %} .header {
     padding: {{ section.settings.padding }}px 0;
-  }
+  } {% endcomment %}
   .header__logo {
     max-width: {{ section.settings.logo_width }}px;
   }
-</style> {% endcomment %}
+</style>
 
 <script>
   document.querySelector('.header__hamburger').addEventListener('click', () => {

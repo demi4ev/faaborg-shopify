@@ -5,6 +5,7 @@
     --width: {{ settings.page_width }}px;
     --bg: {{ settings.background_color }};
     --bgLight: {{ settings.background_color_light }};
+    --second-color: {{ settings.second_color }};
     --border: {{ settings.border_color }};
     --text: {{ settings.text_color }};
     --mediumText: {{ settings.medium_text_color }};
@@ -25,5 +26,6 @@
   <body>
     {% section 'header' %}
     {{ content_for_layout }}
+    {% section 'footer' %}
   </body>
 </html>

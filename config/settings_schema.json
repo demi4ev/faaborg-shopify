@@ -56,8 +56,8 @@
       },
       {
         "type": "color",
-        "id": "accent_color",
-        "label": "Accent color",
+        "id": "second_color",
+        "label": "Second color",
         "default": "#FFE7E1"
       }
     ]

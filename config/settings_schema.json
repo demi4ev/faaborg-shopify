@@ -28,25 +28,37 @@
         "type": "color",
         "id": "background_color",
         "label": "Background color",
-        "default": "#fff"
+        "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "text_color",
         "label": "Text color",
-        "default": "#000"
+        "default": "#000000"
       },
       {
         "type": "color",
         "id": "medium_text_color",
         "label": "Medium text color",
-        "default": "#5e5e5e"
+        "default": "#8E8E8E"
       },
       {
         "type": "color",
         "id": "border_color",
         "label": "Border color",
-        "default": "#ddd"
+        "default": "#E2E2E2"
+      },
+      {
+        "type": "color",
+        "id": "background_color_light",
+        "label": "Background color light",
+        "default": "#F3F3F3"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent color",
+        "default": "#FFE7E1"
       }
     ]
   }

@@ -3,13 +3,13 @@
 
 <div class="header">
 
-  {% if section.settings.show_catalog_button %}
-    <button class="header__button">{% render 'icon' with 'icon-menu.svg' %}Каталог</button>
-  {% endif %}
-
   <a href="/" class="header__logo">
     <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ site.name }}" loading="eager">
   </a>
+
+  {% if section.settings.show_catalog_button %}
+    <button class="header__button">{% render 'icon' with 'icon-menu.svg' %}Catalog</button>
+  {% endif %}
 
   <button class="header__hamburger">
     <span class="header__hamburger-bar"></span>
@@ -96,6 +96,12 @@
       "id": "navigation",
       "label": "Navigation menu",
       "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_catalog_button",
+      "label": "Show catalog button",
+      "default": true
     }
   ]
 }

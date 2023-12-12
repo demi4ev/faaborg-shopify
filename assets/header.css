@@ -1,16 +1,9 @@
-/* .header {
-  padding: {{ section.settings.padding }}px 0;
-}
-
-.header__logo {
-  max-width: {{ section.settings.logo_width }}px;
-} */
-
 .header {
   background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .header__logo {
@@ -29,6 +22,12 @@
   font-style: normal;
   font-weight: 600;
   line-height: 26px; /* 162.5% */
+}
+
+.header__icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .header__hamburger {

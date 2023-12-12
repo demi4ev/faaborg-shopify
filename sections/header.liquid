@@ -42,14 +42,14 @@
 
 <div class="header__nav-overlay"></div>
 
-<style>
+{% comment %} <style>
   .header {
     padding: {{ section.settings.padding }}px 0;
   }
   .header__logo {
     max-width: {{ section.settings.logo_width }}px;
   }
-</style>
+</style> {% endcomment %}
 
 <script>
   document.querySelector('.header__hamburger').addEventListener('click', () => {

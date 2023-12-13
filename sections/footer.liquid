@@ -13,8 +13,22 @@
 
   </nav>
 
+  {% if section.settings.show_payment_logos and shop.enabled_payment_types.size > 0 %}
+    <ul class="footer__payment-logos">
+      {% for type in shop.enabled_payment_types %}
+        <li>
+          <!-- Здесь вы можете использовать различные способы получения SVG-иконок для каждого метода оплаты -->
+          <!-- Например, вы можете использовать атрибут type для определения, какую иконку показывать -->
+          <img src="{{ type | payment_type_icon_url }}" alt="{{ type }}" loading="lazy">
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-  <img src="{{ 'visa.svg' | asset_url }}" alt="Payment Logo 1" loading="lazy" width="100px!important">
+
+
+
+  {% comment %} <img src="{{ 'visa.svg' | asset_url }}" alt="Payment Logo 1" loading="lazy" width="100px!important">
 
 
   {% if section.settings.show_payment_logos %}
@@ -40,7 +54,7 @@
         </li>
       {% endif %}
     </ul>
-  {% endif %}
+  {% endif %} {% endcomment %}
 
 
 

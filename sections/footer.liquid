@@ -74,53 +74,27 @@
   </div>
 
   <div class="footer__privacy-links">
-    Privacy Center
-    Privacy & Cookie Policy
-    Manage Cookies
-    Terms & Conditions
-    IP Notice
-    Imprint
-    Ad Choice
+    {% assign policies = shop.policies %}
+    {% if policies.size > 0 %}
+      <ul class="list-unstyled">
+        {% for policy in policies %}
+          {% if policy.url and policy.title %}
+            <li><a href="{{ policy.url }}">{{ policy.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
   </div>
 
-  {% comment %} {% for block in section.blocks %}
-    {% if block.type == 'navigation' %}
-      <div class="footer-column footer-column--nav">
-        <h2>{{ block.settings.linklist.title }}</h2>
-        {% for link in block.settings.linklist.links %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          </li>
+  <div class="footer__language">
+    {% if section.settings.enable_country_selector %}
+      <select class="country-selector">
+        {% for country in shop.countries %}
+          <option value="{{ country.code }}">{{ country.name }}</option>
         {% endfor %}
-      </div>
-    {% elsif block.type == 'newsletter' %}
-      <div class="footer-column footer-column--news">
-        <h2>{{ block.settings.heading }}</h2>
-        {{ block.settings.text }}
-
-        {% form 'customer', id: 'footer-newsletter' %}
-          {% if form.posted_successfully? %}
-            <p class="footer-column-news-message">You've been subscribed!</p>
-          {% endif %}
-
-          {% if form.errors %}
-            <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
-          {% endif %}
-
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <input name="contact[email]" type="email" placeholder="Email address">
-          <button type="submit">Subscribe</button>
-        {% endform %}
-      </div>
-    {% elsif block.type == 'text' %}
-      <div class="footer-column footer-column--text">
-        <h2>{{ block.settings.heading }}</h2>
-        {{ block.settings.text }}
-      </div>
+      </select>
     {% endif %}
-  {% endfor %} {% endcomment %}
-
-  {% comment %} <p class="footer__copyright">©2009-2023 SHOP All Rights Reserved</p> {% endcomment %}
+  </div>
 
 
 </div>

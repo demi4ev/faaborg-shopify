@@ -26,40 +26,6 @@
   {% endif %}
 
 
-
-
-  {% comment %} <img src="{{ 'visa.svg' | asset_url }}" alt="Payment Logo 1" loading="lazy" width="100px!important">
-
-
-  {% if section.settings.show_payment_logos %}
-    <ul class="footer__payment-logos">
-      {% if section.settings.payment_logo_1 != blank %}
-        <li>
-          <img src="{{ section.settings.payment_logo_1 | image_url: 'master' }}" alt="Payment Logo 1" loading="lazy">
-        </li>
-      {% endif %}
-      {% if section.settings.payment_logo_2 != blank %}
-        <li>
-          <img src="{{ section.settings.payment_logo_2 | image_url: 'master' }}" alt="Payment Logo 2" loading="lazy">
-        </li>
-      {% endif %}
-      {% if section.settings.payment_logo_3 != blank %}
-        <li>
-          <img src="{{ section.settings.payment_logo_3 | image_url: 'master' }}" alt="Payment Logo 3" loading="lazy">
-        </li>
-      {% endif %}
-      {% if section.settings.payment_logo_4 != blank %}
-        <li>
-          <img src="{{ section.settings.payment_logo_4 | image_url: 'master' }}" alt="Payment Logo 4" loading="lazy">
-        </li>
-      {% endif %}
-    </ul>
-  {% endif %} {% endcomment %}
-
-
-
-
-
 </div>
 
 
@@ -83,36 +49,6 @@
       "id": "show_payment_logos",
       "label": "Show Payment Logos",
       "default": true
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_logo_1",
-      "label": "Payment Logo 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_logo_2",
-      "label": "Payment Logo 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_logo_3",
-      "label": "Payment Logo 3"
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_logo_4",
-      "label": "Payment Logo 4"
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_logo_5",
-      "label": "Payment Logo 5"
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_logo_6",
-      "label": "Payment Logo 6"
     }
   ]
 }

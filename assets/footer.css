@@ -31,3 +31,7 @@
   line-height: 26px; /* 185.714% */
   text-decoration-line: underline;
 }
+
+.footer__payment-logos {
+  display: flex;
+}

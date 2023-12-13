@@ -22,6 +22,17 @@
     ]
   },
   {
+    "name": "Country Selector",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_country_selector",
+        "label": "Enable Country Selector",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {

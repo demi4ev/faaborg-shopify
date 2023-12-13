@@ -9,21 +9,118 @@
     <a class="footer__link" href="{{ link.url }}">Read more</a>
   </div>
 
-  <nav class="footer__links">
-
-  </nav>
+  <ul class="footer__nav">
+    <ul class="footer__nav-item">
+      <h4 class="footer__h4">Company info</h4>
+      <li>About SHOP</li>
+      <li>Affiliate</li>
+      <li>Fashion Blogger</li>
+      <li>Social Responsibility</li>
+      <li>Careers</li>
+    </ul>
+    <ul class="footer__nav-item">
+      <h4 class="footer__h4">Company info</h4>
+      <li>About SHOP</li>
+      <li>Affiliate</li>
+      <li>Fashion Blogger</li>
+      <li>Social Responsibility</li>
+      <li>Careers</li>
+    </ul>
+    <ul class="footer__nav-item">
+      <h4 class="footer__h4">Company info</h4>
+      <li>About SHOP</li>
+      <li>Affiliate</li>
+      <li>Fashion Blogger</li>
+      <li>Social Responsibility</li>
+      <li>Careers</li>
+    </ul>
+  </ul>
 
   {% if section.settings.show_payment_logos and shop.enabled_payment_types.size > 0 %}
     <ul class="footer__payment-logos">
       {% for type in shop.enabled_payment_types %}
         <li>
-          <!-- Здесь вы можете использовать различные способы получения SVG-иконок для каждого метода оплаты -->
-          <!-- Например, вы можете использовать атрибут type для определения, какую иконку показывать -->
           <img src="{{ type | payment_type_icon_url }}" alt="{{ type }}" loading="lazy">
         </li>
       {% endfor %}
     </ul>
   {% endif %}
+
+  <div class="footer__subscribe">
+    <h3 class="footer__h3">About SHOP</h3>
+    <p class="footer__text">SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.
+    We use on-demand manufacturing technology to connect suppliers to our agile supply chain.</p>
+    <a class="footer__link" href="{{ link.url }}">Read more</a>
+  </div>
+
+  <div class="footer__copyright">
+    <small class="copyright__content">
+      &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}
+    </small>
+    <small class="copyright__content">{{ powered_by_link }}</small>
+    {%- if section.settings.show_policy -%}
+      <ul class="policies list-unstyled">
+        {%- for policy in shop.policies -%}
+          {%- if policy != blank -%}
+            <li>
+              <small class="copyright__content">
+                <a href="{{ policy.url }}">{{ policy.title }}</a>
+              </small>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+
+  <div class="footer__privacy-links">
+    Privacy Center
+    Privacy & Cookie Policy
+    Manage Cookies
+    Terms & Conditions
+    IP Notice
+    Imprint
+    Ad Choice
+  </div>
+
+  {% comment %} {% for block in section.blocks %}
+    {% if block.type == 'navigation' %}
+      <div class="footer-column footer-column--nav">
+        <h2>{{ block.settings.linklist.title }}</h2>
+        {% for link in block.settings.linklist.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </div>
+    {% elsif block.type == 'newsletter' %}
+      <div class="footer-column footer-column--news">
+        <h2>{{ block.settings.heading }}</h2>
+        {{ block.settings.text }}
+
+        {% form 'customer', id: 'footer-newsletter' %}
+          {% if form.posted_successfully? %}
+            <p class="footer-column-news-message">You've been subscribed!</p>
+          {% endif %}
+
+          {% if form.errors %}
+            <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+          {% endif %}
+
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input name="contact[email]" type="email" placeholder="Email address">
+          <button type="submit">Subscribe</button>
+        {% endform %}
+      </div>
+    {% elsif block.type == 'text' %}
+      <div class="footer-column footer-column--text">
+        <h2>{{ block.settings.heading }}</h2>
+        {{ block.settings.text }}
+      </div>
+    {% endif %}
+  {% endfor %} {% endcomment %}
+
+  {% comment %} <p class="footer__copyright">©2009-2023 SHOP All Rights Reserved</p> {% endcomment %}
 
 
 </div>

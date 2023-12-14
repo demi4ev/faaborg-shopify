@@ -37,7 +37,7 @@
             "type": "newsletter",
             "settings": {
               "heading": "Sign up for SHOP style news",
-              "text": "<p>By clicking the Subscribe button, you are agreeing to our Privacy & Cookie Policy.<\/p>"
+              "text": "<p>By clicking the Subscribe button, you are agreeing to our <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\">Privacy & Cookie Policy<\/a>.<\/p>"
             }
           }
         },

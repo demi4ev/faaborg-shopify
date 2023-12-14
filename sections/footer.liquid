@@ -26,11 +26,11 @@
     {% elsif block.type == 'newsletter' %}
       <div class="footer__subscribe">
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
-        {{ block.settings.text }}
         <form>
           <input type="email" placeholder="Your e-mail">
           <button type="submit">Subscribe</button>
         </form>
+        {{ block.settings.text }}
       </div>
     {% elsif block.type == 'text' %}
       <div class="footer__about">

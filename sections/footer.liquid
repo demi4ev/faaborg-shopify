@@ -14,14 +14,16 @@
   {% for block in section.blocks %}
     {% if block.type == 'navigation' %}
       <div class="footer__nav">
-        <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
-        {% for link in block.settings.linklist.links %}
-          <li class="">
-            <a href="{{ link.url }}" class="">
-              {{ link.title }}
-            </a>
-          </li>
-        {% endfor %}
+        <div class="footer__nav-column">
+          <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
+          {% for link in block.settings.linklist.links %}
+            <li class="">
+              <a href="{{ link.url }}" class="">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </div>
       </div>
     {% elsif block.type == 'text' %}
       <div class="footer__about">

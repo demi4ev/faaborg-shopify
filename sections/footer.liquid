@@ -9,7 +9,18 @@
     <a class="footer__link" href="{{ link.url }}">Read more</a>
   </div>
 
-  <ul class="footer__nav">
+  {% if section.settings.enable_footer_nav %}
+    <ul class="footer__nav">
+      {% for item in section.settings.footer_nav_items %}
+        <ul class="footer__nav-item">
+          <h4 class="footer__h4">{{ item.title }}</h4>
+          <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+        </ul>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% comment %} <ul class="footer__nav">
     <ul class="footer__nav-item">
       <h4 class="footer__h4">Company info</h4>
       <li>About SHOP</li>
@@ -34,7 +45,7 @@
       <li>Social Responsibility</li>
       <li>Careers</li>
     </ul>
-  </ul>
+  </ul> {% endcomment %}
 
   {% if section.settings.show_payment_logos and shop.enabled_payment_types.size > 0 %}
     <ul class="footer__payment-logos">
@@ -119,6 +130,12 @@
       "type": "checkbox",
       "id": "show_payment_logos",
       "label": "Show Payment Logos",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_footer_nav",
+      "label": "Enable Footer Navigation",
       "default": true
     }
   ]

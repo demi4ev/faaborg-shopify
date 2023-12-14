@@ -23,6 +23,15 @@
           </li>
         {% endfor %}
       </div>
+    {% elsif block.type == 'newsletter' %}
+      <div class="footer__subscribe">
+        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
+        {{ block.settings.text }}
+        <form>
+          <input type="email" placeholder="Your e-mail">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
     {% elsif block.type == 'text' %}
       <div class="footer__about">
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
@@ -81,12 +90,12 @@
     </ul>
   {% endif %}
 
-  <div class="footer__subscribe">
+  {% comment %} <div class="footer__subscribe">
     <h3 class="footer__h3">About SHOP</h3>
     <p class="footer__text">SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.
     We use on-demand manufacturing technology to connect suppliers to our agile supply chain.</p>
     <a class="footer__link" href="{{ link.url }}">Read more</a>
-  </div>
+  </div> {% endcomment %}
 
   <div class="footer__copyright">
     <small class="copyright__content">
@@ -173,6 +182,22 @@
     {
       "name": "Text",
       "type": "text",
+      "settings": [
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading text"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "Body text"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
       "settings": [
         {
           "id": "heading",

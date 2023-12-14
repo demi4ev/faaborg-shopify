@@ -9,6 +9,21 @@
     <a class="footer__link" href="{{ link.url }}">Read more</a>
   </div>
 
+  {% for block in section.blocks %}
+    {% if block.type == 'navigation' %}
+      <div class="footer__nav">
+        <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
+        {% for link in block.settings.linklist.links %}
+          <li class="">
+            <a href="{{ link.url }}" class="">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+
   {% comment %} {% if section.settings.enable_footer_nav %}
     <ul class="footer__nav">
       {% for item in section.settings.footer_nav_items %}

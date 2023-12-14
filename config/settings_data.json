@@ -13,11 +13,20 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "45720f73-da02-4ffb-9333-c5ce0ac662a5": {
+            "type": "navigation",
+            "settings": {
+              "linklist": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "45720f73-da02-4ffb-9333-c5ce0ac662a5"
+        ],
         "settings": {
           "padding": 24,
-          "show_payment_logos": true,
-          "payment_logo_1": "shopify:\/\/shop_images\/visa.svg",
-          "payment_logo_2": "shopify:\/\/shop_images\/master-card.svg"
+          "show_payment_logos": true
         }
       }
     },

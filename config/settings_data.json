@@ -20,6 +20,12 @@
               "linklist": "footer"
             }
           },
+          "cec93cdf-d1d1-43b9-9a58-3170a55f592e": {
+            "type": "navigation",
+            "settings": {
+              "linklist": "help-support"
+            }
+          },
           "204a3d9a-6926-4909-8ebe-8839115c36b3": {
             "type": "text",
             "settings": {
@@ -30,6 +36,7 @@
         },
         "block_order": [
           "45720f73-da02-4ffb-9333-c5ce0ac662a5",
+          "cec93cdf-d1d1-43b9-9a58-3170a55f592e",
           "204a3d9a-6926-4909-8ebe-8839115c36b3"
         ],
         "settings": {

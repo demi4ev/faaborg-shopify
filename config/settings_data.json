@@ -32,12 +32,20 @@
               "heading": "About SHOP",
               "text": "<p>SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all. We use on-demand manufacturing technology to connect suppliers to our agile supply chain.<\/p>"
             }
+          },
+          "91010d85-b4ce-4a43-99d6-5e372d01a8e1": {
+            "type": "newsletter",
+            "settings": {
+              "heading": "Sign up for SHOP style news",
+              "text": "<p>By clicking the Subscribe button, you are agreeing to our Privacy & Cookie Policy.<\/p>"
+            }
           }
         },
         "block_order": [
           "45720f73-da02-4ffb-9333-c5ce0ac662a5",
           "cec93cdf-d1d1-43b9-9a58-3170a55f592e",
-          "204a3d9a-6926-4909-8ebe-8839115c36b3"
+          "204a3d9a-6926-4909-8ebe-8839115c36b3",
+          "91010d85-b4ce-4a43-99d6-5e372d01a8e1"
         ],
         "settings": {
           "padding": 24,

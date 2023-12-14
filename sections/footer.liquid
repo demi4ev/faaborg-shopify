@@ -9,7 +9,7 @@
     <a class="footer__link" href="{{ link.url }}">Read more</a>
   </div>
 
-  {% if section.settings.enable_footer_nav %}
+  {% comment %} {% if section.settings.enable_footer_nav %}
     <ul class="footer__nav">
       {% for item in section.settings.footer_nav_items %}
         <ul class="footer__nav-item">
@@ -18,7 +18,7 @@
         </ul>
       {% endfor %}
     </ul>
-  {% endif %}
+  {% endif %} {% endcomment %}
 
   {% comment %} <ul class="footer__nav">
     <ul class="footer__nav-item">
@@ -131,12 +131,20 @@
       "id": "show_payment_logos",
       "label": "Show Payment Logos",
       "default": true
-    },
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
     {
-      "type": "checkbox",
-      "id": "enable_footer_nav",
-      "label": "Enable Footer Navigation",
-      "default": true
+      "name": "Navigationa column",
+      "type": "navigation",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Navigation menu"
+        }
+      ]
     }
   ]
 }

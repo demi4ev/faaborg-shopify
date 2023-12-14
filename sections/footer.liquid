@@ -2,12 +2,14 @@
 
 <div class="footer__container">
 
-  <div class="footer__about">
+  {% comment %} <div class="footer__about">
     <h3 class="footer__h3">About SHOP</h3>
     <p class="footer__text">SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.
     We use on-demand manufacturing technology to connect suppliers to our agile supply chain.</p>
     <a class="footer__link" href="{{ link.url }}">Read more</a>
-  </div>
+  </div> {% endcomment %}
+
+
 
   {% for block in section.blocks %}
     {% if block.type == 'navigation' %}
@@ -21,8 +23,15 @@
           </li>
         {% endfor %}
       </div>
+    {% elsif block.type == 'text' %}
+      <div class="footer__about">
+        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
+        {{ block.settings.text }}
+      </div>
     {% endif %}
   {% endfor %}
+
+
 
   {% comment %} {% if section.settings.enable_footer_nav %}
     <ul class="footer__nav">
@@ -148,7 +157,7 @@
       "default": true
     }
   ],
-  "max_blocks": 3,
+  "max_blocks": 5,
   "blocks": [
     {
       "name": "Navigationa column",
@@ -158,6 +167,22 @@
           "type": "link_list",
           "id": "linklist",
           "label": "Navigation menu"
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading text"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "Body text"
         }
       ]
     }

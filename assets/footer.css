@@ -6,7 +6,7 @@
 .footer__container {
     display: grid;
     gap: 112px;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr repeat(3, 0.33fr) 1fr;
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 24px;

@@ -26,10 +26,10 @@
               "linklist": "help-support"
             }
           },
-          "3a14375e-66a0-430d-840e-060e3ca144d5": {
+          "e2acf6d8-c4cf-4cb1-a67c-88b3e9bf325c": {
             "type": "navigation",
             "settings": {
-              "linklist": "footer"
+              "linklist": "customer-care"
             }
           },
           "204a3d9a-6926-4909-8ebe-8839115c36b3": {
@@ -50,7 +50,7 @@
         "block_order": [
           "45720f73-da02-4ffb-9333-c5ce0ac662a5",
           "cec93cdf-d1d1-43b9-9a58-3170a55f592e",
-          "3a14375e-66a0-430d-840e-060e3ca144d5",
+          "e2acf6d8-c4cf-4cb1-a67c-88b3e9bf325c",
           "204a3d9a-6926-4909-8ebe-8839115c36b3",
           "91010d85-b4ce-4a43-99d6-5e372d01a8e1"
         ],

@@ -21,6 +21,7 @@
 .footer__nav {
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
+  padding: 0 112px 0 0;
 }
 
 .footer__nav-column {
@@ -41,6 +42,8 @@
   background: var(--bg);
   position: relative;
   display: inline-block;
+  width: 100%;
+  max-width: 480px;
 }
 
 .footer__input {

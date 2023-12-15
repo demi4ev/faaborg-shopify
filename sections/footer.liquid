@@ -2,7 +2,7 @@
 
 <div class="footer__container">
 
-  {% for block in section.blocks %}
+
 
     {% if block.type == 'text' %}
       <div class="footer__about">
@@ -12,19 +12,22 @@
     {% endif %}
 
     <div class="footer__nav">
-      {% if block.type == 'navigation' %}
-        <div class="footer__nav-column">
-          <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
-          {% for link in block.settings.linklist.links %}
-            <li class="">
-              <a href="{{ link.url }}" class="">
-                {{ link.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% for block in section.blocks %}
+        {% if block.type == 'navigation' %}
+          <div class="footer__nav-column">
+            <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
+            {% for link in block.settings.linklist.links %}
+              <li class="">
+                <a href="{{ link.url }}" class="">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
+
 
     {% if block.type == 'newsletter' %}
       <div class="footer__subscribe">
@@ -44,7 +47,7 @@
       </div>
     {% endif %}
 
-  {% endfor %}
+
 
   {% if section.settings.show_payment_logos and shop.enabled_payment_types.size > 0 %}
     <ul class="footer__payment-logos">

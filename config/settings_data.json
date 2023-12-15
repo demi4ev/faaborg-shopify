@@ -14,6 +14,13 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "204a3d9a-6926-4909-8ebe-8839115c36b3": {
+            "type": "text",
+            "settings": {
+              "heading": "About SHOP",
+              "text": "<p>SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all. We use on-demand manufacturing technology to connect suppliers to our agile supply chain.<\/p>"
+            }
+          },
           "45720f73-da02-4ffb-9333-c5ce0ac662a5": {
             "type": "navigation",
             "settings": {
@@ -32,13 +39,6 @@
               "linklist": "customer-care"
             }
           },
-          "204a3d9a-6926-4909-8ebe-8839115c36b3": {
-            "type": "text",
-            "settings": {
-              "heading": "About SHOP",
-              "text": "<p>SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all. We use on-demand manufacturing technology to connect suppliers to our agile supply chain.<\/p>"
-            }
-          },
           "91010d85-b4ce-4a43-99d6-5e372d01a8e1": {
             "type": "newsletter",
             "settings": {
@@ -48,10 +48,10 @@
           }
         },
         "block_order": [
+          "204a3d9a-6926-4909-8ebe-8839115c36b3",
           "45720f73-da02-4ffb-9333-c5ce0ac662a5",
           "cec93cdf-d1d1-43b9-9a58-3170a55f592e",
           "e2acf6d8-c4cf-4cb1-a67c-88b3e9bf325c",
-          "204a3d9a-6926-4909-8ebe-8839115c36b3",
           "91010d85-b4ce-4a43-99d6-5e372d01a8e1"
         ],
         "settings": {

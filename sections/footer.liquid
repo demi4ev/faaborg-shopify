@@ -30,14 +30,17 @@
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
         {% form 'customer', id: 'footer-newsletter' %}
           {% if form.posted_successfully? %}
-            <p class="footer-column-news-message">You've been subscribed!</p>
+            <p class="footer__message">You've been subscribed!</p>
           {% endif %}
           {% if form.errors %}
-            <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+            <p class="footer__message">{{ form.errors.messages.email }}</p>
           {% endif %}
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <input class="footer__input" name="contact[email]" type="email" placeholder="Email address">
           <button type="submit">Subscribe</button>
+          <div class="footer__form">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input class="footer__input" name="contact[email]" type="email" placeholder="Email address">
+            <button class="footer__button" type="submit">Subscribe</button>
+          </div>
           {{ block.settings.text }}
         {% endform %}
       </div>
@@ -53,6 +56,7 @@
       {% endfor %}
     </ul>
   {% endif %}
+
 
   <div class="footer__copyright">
     <small class="copyright__content">

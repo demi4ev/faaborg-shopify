@@ -2,50 +2,49 @@
 
 <div class="footer__container">
 
-  {% for block in section.blocks %}
+  <div class="footer__nav">
 
-    {% if block.type == 'text' %}
-      <div class="footer__about">
-        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
-        {{ block.settings.text }}
-      </div>
+    {% for block in section.blocks %}
 
-
-    {% elsif block.type == 'navigation' %}
-      <div class="footer__nav">
-        {% for column in block.settings.linklist.columns %}
-          <div class="footer__nav-column">
-            <h4 class="footer__h4">{{ column.title }}</h4>
-            {% for link in column.links %}
-              <li class="">
-                <a href="{{ link.url }}" class="">
-                  {{ link.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </div>
-        {% endfor %}
-      </div>
-
-    {% elsif block.type == 'newsletter' %}
-      <div class="footer__subscribe">
-        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
-        {% form 'customer', id: 'footer-newsletter' %}
-          {% if form.posted_successfully? %}
-            <p class="footer-column-news-message">You've been subscribed!</p>
-          {% endif %}
-          {% if form.errors %}
-            <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
-          {% endif %}
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <input name="contact[email]" type="email" placeholder="Email address">
-          <button type="submit">Subscribe</button>
+      {% if block.type == 'text' %}
+        <div class="footer__about">
+          <h4 class="footer__h3">{{ block.settings.heading }}</h4>
           {{ block.settings.text }}
-        {% endform %}
-      </div>
-    {% endif %}
+        </div>
 
-  {% endfor %}
+      {% elsif block.type == 'navigation' %}
+        <div class="footer__nav-column">
+          <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
+          {% for link in block.settings.linklist.links %}
+            <li class="">
+              <a href="{{ link.url }}" class="">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </div>
+
+      {% elsif block.type == 'newsletter' %}
+        <div class="footer__subscribe">
+          <h4 class="footer__h3">{{ block.settings.heading }}</h4>
+          {% form 'customer', id: 'footer-newsletter' %}
+            {% if form.posted_successfully? %}
+              <p class="footer-column-news-message">You've been subscribed!</p>
+            {% endif %}
+            {% if form.errors %}
+              <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+            {% endif %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input name="contact[email]" type="email" placeholder="Email address">
+            <button type="submit">Subscribe</button>
+            {{ block.settings.text }}
+          {% endform %}
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+    </div>
 
   {% if section.settings.show_payment_logos and shop.enabled_payment_types.size > 0 %}
     <ul class="footer__payment-logos">

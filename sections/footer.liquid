@@ -2,18 +2,16 @@
 
 <div class="footer__container">
 
-  {% comment %} <div class="footer__about">
-    <h3 class="footer__h3">About SHOP</h3>
-    <p class="footer__text">SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.
-    We use on-demand manufacturing technology to connect suppliers to our agile supply chain.</p>
-    <a class="footer__link" href="{{ link.url }}">Read more</a>
-  </div> {% endcomment %}
-
-
-
   {% for block in section.blocks %}
 
-    {% if block.type == 'navigation' %}
+    {% if block.type == 'text' %}
+      <div class="footer__about">
+        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
+        {{ block.settings.text }}
+      </div>
+
+
+    {% elsif block.type == 'navigation' %}
       <div class="footer__nav-column">
         <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
         {% for link in block.settings.linklist.links %}
@@ -41,65 +39,9 @@
           {{ block.settings.text }}
         {% endform %}
       </div>
-
-    {% comment %} {% elsif block.type == 'newsletter' %}
-      <div class="footer__subscribe">
-        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
-        <form>
-          <input type="email" placeholder="Your e-mail">
-          <button type="submit">Subscribe</button>
-        </form>
-        {{ block.settings.text }}
-      </div> {% endcomment %}
-
-    {% elsif block.type == 'text' %}
-      <div class="footer__about">
-        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
-        {{ block.settings.text }}
-      </div>
     {% endif %}
 
   {% endfor %}
-
-
-
-  {% comment %} {% if section.settings.enable_footer_nav %}
-    <ul class="footer__nav">
-      {% for item in section.settings.footer_nav_items %}
-        <ul class="footer__nav-item">
-          <h4 class="footer__h4">{{ item.title }}</h4>
-          <li><a href="{{ item.link }}">{{ item.title }}</a></li>
-        </ul>
-      {% endfor %}
-    </ul>
-  {% endif %} {% endcomment %}
-
-  {% comment %} <ul class="footer__nav">
-    <ul class="footer__nav-item">
-      <h4 class="footer__h4">Company info</h4>
-      <li>About SHOP</li>
-      <li>Affiliate</li>
-      <li>Fashion Blogger</li>
-      <li>Social Responsibility</li>
-      <li>Careers</li>
-    </ul>
-    <ul class="footer__nav-item">
-      <h4 class="footer__h4">Company info</h4>
-      <li>About SHOP</li>
-      <li>Affiliate</li>
-      <li>Fashion Blogger</li>
-      <li>Social Responsibility</li>
-      <li>Careers</li>
-    </ul>
-    <ul class="footer__nav-item">
-      <h4 class="footer__h4">Company info</h4>
-      <li>About SHOP</li>
-      <li>Affiliate</li>
-      <li>Fashion Blogger</li>
-      <li>Social Responsibility</li>
-      <li>Careers</li>
-    </ul>
-  </ul> {% endcomment %}
 
   {% if section.settings.show_payment_logos and shop.enabled_payment_types.size > 0 %}
     <ul class="footer__payment-logos">
@@ -110,13 +52,6 @@
       {% endfor %}
     </ul>
   {% endif %}
-
-  {% comment %} <div class="footer__subscribe">
-    <h3 class="footer__h3">About SHOP</h3>
-    <p class="footer__text">SHOP is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.
-    We use on-demand manufacturing technology to connect suppliers to our agile supply chain.</p>
-    <a class="footer__link" href="{{ link.url }}">Read more</a>
-  </div> {% endcomment %}
 
   <div class="footer__copyright">
     <small class="copyright__content">
@@ -190,7 +125,7 @@
   "max_blocks": 5,
   "blocks": [
     {
-      "name": "Navigationa column",
+      "name": "Navigation column",
       "type": "navigation",
       "settings": [
         {

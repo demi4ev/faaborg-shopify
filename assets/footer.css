@@ -20,11 +20,14 @@
 
 .footer__nav {
   display: flex;
-  /* padding: 0 112px 0 0; */
 }
 
 .footer__nav-column {
   width: 100%;
+}
+
+.footer__nav-column:last-child {
+  padding: 0 112px 0 0;
 }
 
 .footer__subscribe {

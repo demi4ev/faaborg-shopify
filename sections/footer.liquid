@@ -12,6 +12,7 @@
 
 
   {% for block in section.blocks %}
+
     {% if block.type == 'navigation' %}
       <div class="footer__nav-column">
         <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
@@ -23,7 +24,25 @@
           </li>
         {% endfor %}
       </div>
+
     {% elsif block.type == 'newsletter' %}
+      <div class="footer__subscribe">
+        <h4 class="footer__h3">{{ block.settings.heading }}</h4>
+        {% form 'customer', id: 'footer-newsletter' %}
+          {% if form.posted_successfully? %}
+            <p class="footer-column-news-message">You've been subscribed!</p>
+          {% endif %}
+          {% if form.errors %}
+            <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+          {% endif %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input name="contact[email]" type="email" placeholder="Email address">
+          <button type="submit">Subscribe</button>
+          {{ block.settings.text }}
+        {% endform %}
+      </div>
+
+    {% comment %} {% elsif block.type == 'newsletter' %}
       <div class="footer__subscribe">
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
         <form>
@@ -31,13 +50,15 @@
           <button type="submit">Subscribe</button>
         </form>
         {{ block.settings.text }}
-      </div>
+      </div> {% endcomment %}
+
     {% elsif block.type == 'text' %}
       <div class="footer__about">
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
         {{ block.settings.text }}
       </div>
     {% endif %}
+
   {% endfor %}
 
 

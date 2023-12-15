@@ -9,9 +9,10 @@
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
         {{ block.settings.text }}
       </div>
+    {% endif %}
 
 
-    {% elsif block.type == 'navigation' %}
+    {% if block.type == 'navigation' %}
       <div class="footer__nav-column">
         <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
         {% for link in block.settings.linklist.links %}
@@ -22,8 +23,9 @@
           </li>
         {% endfor %}
       </div>
+    {% endif %}
 
-    {% elsif block.type == 'newsletter' %}
+    {% if block.type == 'newsletter' %}
       <div class="footer__subscribe">
         <h4 class="footer__h3">{{ block.settings.heading }}</h4>
         {% form 'customer', id: 'footer-newsletter' %}

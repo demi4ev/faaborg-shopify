@@ -4,16 +4,17 @@
 }
 
 .footer__container {
-    display: grid;
-    gap: 112px;
-    grid-template-columns: 1fr repeat(3, 0.33fr) 1fr;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 24px;
+  width: 100%;
+  display: grid;
+  gap: 112px;
+  grid-template-columns: 1fr repeat(3, 0.33fr) 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 24px;
 }
 
 .footer__about {
-  max-width: 392px;
+  grid-area: 1 / 1 / 2 / 2;
   padding: 0 112px 0 0;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .footer__subscribe {
-  max-width: 392px;
+  grid-area: 1 / 5 / 2 / 6;
 }
 
 .footer__copyright {

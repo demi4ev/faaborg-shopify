@@ -10,7 +10,7 @@
         {{ block.settings.text }}
       </div>
 
-    <div class="footer__nav">
+
     {% elsif block.type == 'navigation' %}
       <div class="footer__nav-column">
         <h4 class="footer__h4">{{ block.settings.linklist.title }}</h4>
@@ -22,7 +22,6 @@
           </li>
         {% endfor %}
       </div>
-    </div>
 
     {% elsif block.type == 'newsletter' %}
       <div class="footer__subscribe">
